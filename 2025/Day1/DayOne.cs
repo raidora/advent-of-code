@@ -9,7 +9,7 @@ namespace advent_of_code
         public void ChallengeOne()
         {
             var dial = new Dial();
-            var input = DayOneInputs.FirstInput.Split('\n');
+            var input = DayOneInputs.Challenge.Split('\n');
             var password = 0;
 
             foreach (var line in input) {
@@ -27,6 +27,25 @@ namespace advent_of_code
                 {
                     if (dial.TurnRight(times) == 0) password++;
                 }
+            }
+            Console.WriteLine(password);
+        }
+
+        [Test]
+        public void ChallengeTwo()
+        {
+            var dial = new Dial();
+            var input = DayOneInputs.Challenge
+                .Split('\n')
+                .Select(line => line.Trim())
+                .Where(line => line.Length != 0);
+            var password = 0;
+
+            foreach (var line in input) {
+                var direction = line[..1];
+                var times = Int32.Parse(line[1..]);
+
+                password += dial.TurnClicking(direction, times);
             }
             Console.WriteLine(password);
         }

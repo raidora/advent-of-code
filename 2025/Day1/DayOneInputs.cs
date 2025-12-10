@@ -2,7 +2,7 @@
 {
     internal static class DayOneInputs
     {
-        public static string FirstPractice = """
+        public static string Practice = """
                 L68
                 L30
                 R48
@@ -15,7 +15,7 @@
                 L82
                 """;
 
-        public static string FirstInput = """
+        public static string Challenge = """
                 L29
                 R49
                 L41
